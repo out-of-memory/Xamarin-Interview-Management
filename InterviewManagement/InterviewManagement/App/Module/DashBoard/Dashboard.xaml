@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="InterviewManagement.Dashboard">
+	<ContentPage.Content>
+		<StackLayout VerticalOptions="StartAndExpand">
+			<Button x:Name="Logout" Clicked="OnLogout" Text="Logout" />
+			<StackLayout Orientation="Horizontal">
+				<Label Text="Technology:" />
+				<Picker x:Name="Technology" HorizontalOptions="FillAndExpand" SelectedIndexChanged="OnTechnologyChange" />
+			</StackLayout>
+			<StackLayout Orientation="Horizontal">
+				<Label Text="level:" />
+				<Picker x:Name="Level" HorizontalOptions="FillAndExpand" SelectedIndexChanged="OnLevelChange" IsEnabled="False" />
+			</StackLayout>
+			<StackLayout VerticalOptions="StartAndExpand">
+			</StackLayout>
+			<ListView x:Name="QuestionList" ItemsSource="{Binding Questions }" ItemTapped="OnQuestionTapped">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<ViewCell.View>
+								<StackLayout Orientation="Horizontal">
+									<Label Text="{Binding Description}" />
+								</StackLayout>
+							</ViewCell.View>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
