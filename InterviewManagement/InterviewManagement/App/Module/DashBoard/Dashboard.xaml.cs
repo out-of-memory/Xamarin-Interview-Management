@@ -56,6 +56,8 @@ namespace InterviewManagement
 
 		public void OnQuestionTapped (object o, ItemTappedEventArgs e)
 		{
+			var question = o as Question;
+			Navigation.PushModalAsync (new QuestionDetail (question));
 		}
 
 
