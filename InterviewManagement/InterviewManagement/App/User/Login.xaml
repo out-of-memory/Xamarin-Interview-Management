@@ -3,8 +3,8 @@
 	<ContentPage.Content>
 
 	<StackLayout BackgroundColor="White" VerticalOptions="StartAndExpand">
-	<Entry x:Name="UserName" Placeholder="User Name" />
-	<Entry x:Name="Password" Placeholder="Password" />
+	<Entry x:Name="UserName" Placeholder="User Name" Text="{Binding UserName}" TextColor="Black" />
+	<Entry x:Name="Password" Placeholder="Password" Text="{Binding Password}" TextColor="Black" />
 	<Button x:Name ="LoginCommand" Text="Login" Clicked="OnLogin"/>
 	</StackLayout>
 

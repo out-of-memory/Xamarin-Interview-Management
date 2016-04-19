@@ -26,7 +26,8 @@ namespace InterviewManagement
 		public void OnLogout (object o, EventArgs e)
 		{
 			App.IsLogedIn = false;
-			Navigation.PushModalAsync (new Login ());
+            bool userLogout = App.Database.Logout();
+            Navigation.PopModalAsync(false);
 		}
 
 		private void PopulatePickers (Picker p, string[] d)
@@ -60,7 +61,10 @@ namespace InterviewManagement
 			Navigation.PushModalAsync (new QuestionDetail (question));
 		}
 
-
+        protected override bool OnBackButtonPressed()
+        {
+            return false;
+        }
 	}
 }
 
