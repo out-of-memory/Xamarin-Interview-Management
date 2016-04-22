@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="RestBindAndNavigate.zip" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App\User\Login.xaml">
@@ -68,13 +69,5 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App\" />
-    <Folder Include="App\User\" />
-    <Folder Include="App\Module\" />
-    <Folder Include="App\Module\DashBoard\" />
-    <Folder Include="App\Model\" />
-    <Folder Include="App\StubHelpers\" />
-    <Folder Include="App\Module\Question\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>
