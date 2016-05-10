@@ -7,20 +7,31 @@ namespace InterviewManagement
 {
 	public partial class Login : ContentPage
 	{
-		public Login ()
+        public Login()
 		{
 			InitializeComponent ();
 		}
 	
 		public void OnLogin(object o, EventArgs e)
 		{
-			App.IsLogedIn = true;
-			Navigation.PushModalAsync (new Dashboard ());
+            var items = new User
+            {
+                UserName = UserName.Text,
+                Password = Password.Text,
+                AuthToken = Guid.NewGuid().ToString()
+            };
+            bool userLogin = App.Database.Login(items);
+            if (userLogin)
+            {
+                Navigation.PushModalAsync(new Dashboard());
+            }
+            else
+            {
+                DisplayAlert("Error", "Kindly re-enter UserName and Password", "OK");
+            }
+            UserName.Text = "";
+            Password.Text = "";
 		}
 	}
-
-
-
-
 }
 
