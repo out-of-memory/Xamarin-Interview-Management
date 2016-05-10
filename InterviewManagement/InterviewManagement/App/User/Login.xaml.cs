@@ -29,6 +29,8 @@ namespace InterviewManagement
             {
                 DisplayAlert("Error", "Kindly re-enter UserName and Password", "OK");
             }
+            UserName.Text = "";
+            Password.Text = "";
 		}
 	}
 }
